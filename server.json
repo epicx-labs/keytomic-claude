@@ -5,10 +5,10 @@
   "description": "Keytomic AI SEO agent: SEO audits, Search Console, GA4, keyword research, articles and publishing",
   "websiteUrl": "https://keytomic.com/mcp",
   "repository": {
-    "url": "https://github.com/epicx-labs/keytomic-claude",
+    "url": "https://github.com/epicx-labs/keytomic-mcp",
     "source": "github"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "remotes": [
     {
       "type": "streamable-http",
