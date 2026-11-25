@@ -104,7 +104,7 @@ You can also add Keytomic as a custom connector:
    then click **Add**.
 5. Click **Connect**, sign in to Keytomic, and approve.
 
-The [AI SEO with Keytomic](https://github.com/epicx-labs/keytomic-claude)
+The [AI SEO with Keytomic](https://github.com/epicx-labs/keytomic-mcp)
 plugin for Claude adds the same server and ten skills. The skills are SEO
 audits, Search Console review, Google Analytics, workspace setup, the content
 calendar with keyword research, articles, and hero images, and publishing.
@@ -156,21 +156,21 @@ To install the AI SEO with Keytomic plugin with its ten skills, run this
 command:
 
 ```bash
-claude plugin install keytomic --marketplace epicx-labs/keytomic-claude
+claude plugin install keytomic --marketplace epicx-labs/keytomic-mcp
 ```
 
 This command needs Claude Code 2.1.292 or later. Inside a Claude Code session,
 run this command:
 
 ```text
-/plugin install keytomic --marketplace epicx-labs/keytomic-claude
+/plugin install keytomic --marketplace epicx-labs/keytomic-mcp
 ```
 
 For one session only, run this command from the folder that has a clone of
 this repository:
 
 ```bash
-claude --plugin-dir ./keytomic-claude
+claude --plugin-dir ./keytomic-mcp
 ```
 
 ### Cursor
@@ -196,13 +196,13 @@ You can also add the server yourself:
 
 3. Sign in to Keytomic when Cursor asks.
 
-The [AI SEO with Keytomic for Cursor](https://github.com/epicx-labs/keytomic-claude)
+The [AI SEO with Keytomic for Cursor](https://github.com/epicx-labs/keytomic-mcp)
 plugin adds the same server and the ten skills to Cursor. It needs Cursor 2.5 or
 later. Copy the repository to your local Cursor plugins folder, then run
 **Developer: Reload Window**:
 
 ```bash
-git clone https://github.com/epicx-labs/keytomic-claude ~/.cursor/plugins/local/keytomic
+git clone https://github.com/epicx-labs/keytomic-mcp ~/.cursor/plugins/local/keytomic
 ```
 
 On Cursor Teams and Enterprise, an admin can import this repository as a
@@ -234,7 +234,7 @@ You can also add the server by hand:
 Install Keytomic as a Gemini CLI extension:
 
 ```bash
-gemini extensions install https://github.com/epicx-labs/keytomic-claude
+gemini extensions install https://github.com/epicx-labs/keytomic-mcp
 ```
 
 Then restart Gemini CLI and sign in to Keytomic when it prompts you. You can
