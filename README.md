@@ -299,6 +299,7 @@ as the authentication.
 
 - **SEO Audits**: start an audit of a site, follow it to the end, and read the
   findings by category, with the affected pages and the recommended fix.
+  Compare the stored scores of earlier audits.
 - **Search Console insights**: find the top, new, improving, and declining
   queries and pages, low-hanging fruits, underperforming pages, keyword
   cannibalization, zombie pages, and question queries.
@@ -318,7 +319,7 @@ as the authentication.
   topic, add topics from keywords or from a title, and start a content
   calendar run and follow it.
 - **Articles**: write the article of a calendar topic, read it with its SEO
-  fields and its Markdown text, edit it, and generate a new hero image for it.
+  fields and its Markdown text, edit parts of the text or all of it, and generate a new hero image for it.
   In clients that support MCP Apps, such as Claude and ChatGPT, the article
   and the hero image show in the chat. When your connection can edit content,
   you can edit the title and the text of the article in the chat and save
@@ -456,6 +457,8 @@ The content calendar and article tools also return these errors:
 | `topic_generation_in_progress` | Keytomic writes the article of this topic now. |
 | `draft_not_found` | The topic has no article yet. |
 | `article_slug_taken` | Another article of the site uses this slug. |
+| `edit_text_not_found` | The text to change is not in the article. Nothing was saved. |
+| `edit_text_ambiguous` | The text to change is in the article more than one time. Nothing was saved. |
 
 The publishing tools also return these errors:
 
