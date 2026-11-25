@@ -12,10 +12,10 @@ A Website Audit crawls a site's saved domain and reports per category: status, f
 1. Find the site with `list_sites`. With one site, use it. With several, match the user's words to a name or a domain. Ask when no site matches. Never show a projectId or a runId.
 2. Decide between a new audit and the last one:
    - The user asks for a new audit, or the site has no audit: tell the user that the audit crawls the site and takes minutes, then get a yes, then call `start_audit`. The audit runs desktop and mobile PageSpeed. Set `includeMobile` to `false` only when the user asks for desktop only. A result with `created` false means an audit already runs: follow that one.
-   - Otherwise read the last audit with `get_audit` and tell the user when it ran. Offer a new audit when the user wants current data.
-   - The user asks about an earlier audit, or wants to compare audits: find the audits of the site with `list_audits`, then read each one with `get_audit` and its `runId`.
+   - Otherwise read the latest finished audit with `get_audit` and tell the user when it ran. When the result has `newerAudit`, tell the user about the newer audit and its status, and follow a running one with `watch_audit`. Offer a new audit when the user wants current data.
+   - The user asks about an earlier audit, or wants to compare audits: read the stored results of the audits with `list_audits`. Each `result` gives the scores, the page counts and the status of each category. `get_audit` can read only the latest finished audit and newer ones. Compare two scores only when their `scoreVersion` is the same.
 3. While the audit is queued or running, call `watch_audit`. After each result, tell the user what changed in one or two sentences, then call `watch_audit` again with its `since` value. Stop when the status is completed, partial, failed or cancelled.
-4. When the audit is completed or partial, read `get_audit` for the summary, then page through `list_audit_findings` with `cursor` until `nextCursor` is empty. The report is complete only when every finding has a place in it.
+4. When the audit is completed or partial, read `get_audit` with the `runId` from `start_audit` for the summary, then page through `list_audit_findings` with `cursor` until `nextCursor` is empty. The report is complete only when every finding has a place in it.
 5. Go deeper only on request or for the top issues:
    - `get_audit` with `category` for one category's checks.
    - `list_audit_rows` with `category` and `check` for every row of a check.

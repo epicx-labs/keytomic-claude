@@ -21,7 +21,7 @@ Keytomic keeps a backlink report for each site, the same data as the Backlinks p
 
 ## The report
 
-- The backlinks: the referring page, the anchor text, the authority (0 to 100), dofollow or nofollow, the spam score, and whether the link is broken or new.
+- The backlinks: the referring page, the anchor text, the authority of the referring domain (0 to 100), dofollow or nofollow, the spam score (no spam score means that it was not checked, not that the link is clean), and whether the link is broken or new.
 - The gaps: the page that links to a competitor, and its outreach draft.
 - Say when the data was read (`fetchedAt`).
 
