@@ -41,7 +41,7 @@ For more information, go to [keytomic.com/mcp](https://keytomic.com/mcp).
 This README is the main documentation for the Keytomic MCP server and the
 plugins. The Claude plugin and the Cursor plugin use the same `skills/` folder.
 
-The Claude and Cursor plugins add the same server and these ten skills:
+The Claude and Cursor plugins add the same server and these fifteen skills:
 
 | Skill | Use it for |
 | --- | --- |
@@ -55,6 +55,11 @@ The Claude and Cursor plugins add the same server and these ten skills:
 | `backlinks` | Read the backlinks and the backlink gaps of a site, and set the competitors of the gap list |
 | `reddit-opportunities` | Find Reddit threads to answer, write reply drafts, and change the scan settings |
 | `ai-visibility` | Set up AI Visibility, edit the prompts and the settings, run a check, and read the report |
+| `internal-linking-with-keytomic` | Audit money pages, hub-to-child, child-to-hub and sibling links, then fix the gaps in the articles |
+| `seo-performance-check` | Run a daily, weekly or monthly GA4 and Search Console report with period-over-period changes |
+| `backlink-check-and-outreach` | Run outreach to the backlink gaps: qualify the pages, find contacts, and draft and send pitches |
+| `ai-visibility-check-and-outreach` | Find prompts where AI answers cite competitors but not the brand, then pitch the cited sources |
+| `blog-content-review` | Review drafts before publishing: SERP intent, information gain, brand section, competitor links, SEO score |
 
 The plugins have no code of their own. Each plugin declares one remote MCP
 server, `https://app.keytomic.com/mcp`, and its skills are text files. Your
@@ -105,11 +110,12 @@ You can also add Keytomic as a custom connector:
 5. Click **Connect**, sign in to Keytomic, and approve.
 
 The [AI SEO with Keytomic](https://github.com/epicx-labs/keytomic-mcp)
-plugin for Claude adds the same server and ten skills. The skills are SEO
+plugin for Claude adds the same server and fifteen skills. The skills are SEO
 audits, Search Console review, Google Analytics, workspace setup, the content
 calendar with keyword research, articles, and hero images, and publishing.
 The other skills are indexing, backlinks, Reddit Opportunities, and AI
-Visibility. To add the plugin, open **Customize > Plugins** on claude.ai. Each
+Visibility, and five workflows: internal linking, an SEO performance check,
+backlink outreach, AI visibility outreach, and a blog content review. To add the plugin, open **Customize > Plugins** on claude.ai. Each
 new version needs a directory review, so the directory version can be older
 than the repository.
 
@@ -152,7 +158,7 @@ this computer.
 Start Claude Code and sign in to Keytomic when it prompts you. You can also run
 `/mcp`, select **keytomic**, and complete the sign-in.
 
-To install the AI SEO with Keytomic plugin with its ten skills, run this
+To install the AI SEO with Keytomic plugin with its fifteen skills, run this
 command:
 
 ```bash
@@ -197,7 +203,7 @@ You can also add the server yourself:
 3. Sign in to Keytomic when Cursor asks.
 
 The [AI SEO with Keytomic for Cursor](https://github.com/epicx-labs/keytomic-mcp)
-plugin adds the same server and the ten skills to Cursor. It needs Cursor 2.5 or
+plugin adds the same server and the fifteen skills to Cursor. It needs Cursor 2.5 or
 later. Copy the repository to your local Cursor plugins folder, then run
 **Developer: Reload Window**:
 
