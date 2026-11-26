@@ -25,7 +25,10 @@ Fix a site's entire internal link structure in one workflow. Any Keytomic user c
 **Goal:** Protect the pages that drive revenue before touching anything else.
 
 1. Identify all money pages (high-intent, commercial pages: pricing, feature pages, landing pages, comparison pages, solution pages). Ask the user to confirm the list if unclear.
-2. For each money page, count in-body inbound links from other published pages (use `inspect_urls` or fetch the sitemap with `list_sitemap_urls` and cross-reference).
+2. For each money page, count in-body inbound links from other published pages, using the latest finished Website Audit:
+   - Call `list_audits` and take the newest completed audit. If there is none, or it is older than the latest content changes, ask the user before starting one with `start_audit`, then follow it with `watch_audit`.
+   - Page through `list_audit_links` (internal links only) and count the distinct source pages that link to each money page.
+   - Do not count nav or footer links: a link with the same target and anchor that appears on most of the pages is site chrome, not a body link.
 3. Classify each money page:
    - **Orphan (critical):** 0–2 inbound body links → must fix
    - **Underlinked:** 3–9 inbound body links → improve

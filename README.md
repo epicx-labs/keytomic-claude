@@ -57,7 +57,7 @@ The Claude and Cursor plugins add the same server and these fifteen skills:
 | `ai-visibility` | Set up AI Visibility, edit the prompts and the settings, run a check, and read the report |
 | `internal-linking-with-keytomic` | Audit money pages, hub-to-child, child-to-hub and sibling links, then fix the gaps in the articles |
 | `seo-performance-check` | Run a daily, weekly or monthly GA4 and Search Console report with period-over-period changes |
-| `backlink-check-and-outreach` | Qualify the backlink gaps, find contacts, and draft and send outreach pitches |
+| `backlink-check-and-outreach` | Run outreach to the backlink gaps: qualify the pages, find contacts, and draft and send pitches |
 | `ai-visibility-check-and-outreach` | Find prompts where AI answers cite competitors but not the brand, then pitch the cited sources |
 | `blog-content-review` | Review drafts before publishing: SERP intent, information gain, brand section, competitor links, SEO score |
 

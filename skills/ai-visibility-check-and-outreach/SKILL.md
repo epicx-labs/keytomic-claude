@@ -1,6 +1,6 @@
 ---
 name: ai-visibility-check-and-outreach
-description: Run an AI visibility check using Keytomic to find pages ranking across LLMs for target queries, then identify and reach out to sources that mention competitors but not your brand. Use when a user wants to track LLM visibility, find brand gaps in AI answers, or do AI-era SEO outreach.
+description: Run an AI visibility gap and outreach campaign using Keytomic — find the prompts where AI answers cite competitors but not your brand, then qualify the cited sources, find contacts, and draft and send pitches. Use when a user wants to find brand gaps in AI answers and do AI-era SEO outreach to the sources LLMs cite. To only set up AI Visibility, edit prompts, run a check or read the report, use the ai-visibility skill.
 ---
 
 # AI Visibility Check and Outreach
@@ -14,12 +14,12 @@ Two-phase workflow: audit brand presence across LLMs, then reach out to sources 
 - Call `list_sites` to identify the site
 - Call `get_project` to read the brand profile
 - Call `get_visibility` to check if a tracker exists
-  - If no tracker exists: define 5–10 buyer-intent queries the target audience would type into an LLM. Ask the user to confirm or adjust. Save them with `update_visibility_settings`.
+  - If no tracker exists: run `start_visibility_setup`, which researches the site and saves Suggested prompts. Pick 5–10 buyer-intent prompts from them (or write new ones), ask the user to confirm or adjust, then add them with `add_visibility_prompts`.
   - If a tracker exists: use the existing prompts. Ask if the user wants to add or change any.
 
 ### 1.2 Run the check
 
-- Call `start_visibility_check` to trigger a fresh check across all tracked prompts
+- Call `start_visibility_check` without `confirm` first. It returns a plan and starts nothing. Show the user the observations the check needs and the observations left this month, and call again with `confirm` set to `true` only after they agree
 - Wait for results
 - Call `get_visibility_report` to fetch the results
 

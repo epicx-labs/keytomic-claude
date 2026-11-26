@@ -1,6 +1,6 @@
 ---
 name: backlink-check-and-outreach
-description: Run a backlink gap analysis using Keytomic — find domains linking to competitors but not to your site, qualify them, find contact details, and send personalised outreach pitches. Use when a user wants to build backlinks, close a competitor link gap, or find new link opportunities.
+description: Run a backlink outreach campaign from Keytomic's backlink gaps — qualify the pages that link to competitors but not to your site, find contact details, and draft and send personalised pitches. Use when a user wants to run link-building outreach, pitch the sites in their backlink gap, or close a competitor link gap. To only read backlinks or change the competitor list, use the backlinks skill.
 ---
 
 # Backlink Check and Outreach
@@ -13,21 +13,17 @@ Two-phase workflow: find domains linking to competitors but not to your site, th
 
 - Call `list_sites` to identify the site
 - Call `get_project` to read the brand profile
-- Confirm 3–5 competitor domains with the user (or infer from the brand profile if already set)
-- Call `set_backlink_competitors` to save competitors if not already set
+- Call `get_backlinks` and read `competitorDomains`
+  - If the list is empty or wrong: confirm 3–5 competitor domains with the user (or infer from the brand profile). Show the full new list and get a yes, then save it with `set_backlink_competitors` (it replaces the list, max 10 domains). The gaps of a new competitor show after the next view of the Backlinks page, so give the user the `backlinksUrl` and stop until they have opened it.
 
 ### 1.2 Pull backlink data
 
-Run in parallel:
-- `get_backlinks_overview` — own site summary
-- `get_backlinks_profile` — own site referring domains (full list)
-
-Then for each competitor (sequential to avoid rate limits):
-- Look up referring domains for each competitor via available Keytomic backlink tools
+- Call `get_backlinks`. It reads the saved report only and spends no credits. Say when the data was read (`fetchedAt`).
+- If no report is saved, give the user the `backlinksUrl` and stop. The Backlinks page reads the data when the user opens it.
 
 ### 1.3 Find the gap
 
-Cross-reference: domains linking to any competitor but NOT to the site = gap domains. Deduplicate. Remove domains already linking to the site.
+Keytomic already computes the gap: the backlink gaps in `get_backlinks` are the pages that link to a competitor but not to the site, one page per linking site, each with an outreach draft. Use that list. Drop any domain that also appears in the site's own backlinks.
 
 ### 1.4 Qualify gap domains
 
